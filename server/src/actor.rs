@@ -17,14 +17,14 @@ struct Player {
 }
 
 struct GameSettings {
-    wordList: Option<Vec<String>>,
-    timeToGuessInMinutes: Option<u8>,
-    numberOfRounds: Option<u8>,
+    word_list: Option<Vec<String>>,
+    time_to_guess_in_minutes: Option<u8>,
+    number_of_rounds: Option<u8>,
 }
 
 struct OngoingGame {
-    currentWord: String,
-    currentTurnIndex: i32,
+    current_word: String,
+    current_turn_index: i32,
 }
 
 enum Status {
@@ -35,7 +35,7 @@ enum Status {
 struct Game {
     id: Uuid,
     status: Status,
-    roomCode: String,
+    room_code: String,
     players: Vec<Player>,
 }
 
@@ -50,11 +50,11 @@ impl Game {
         Game {
             id: Uuid::new_v4(),
             status: Status::Lobby(GameSettings {
-                wordList: None,
-                timeToGuessInMinutes: None,
-                numberOfRounds: None,
+                word_list: None,
+                time_to_guess_in_minutes: None,
+                number_of_rounds: None,
             }),
-            roomCode: room_code,
+            room_code,
             players: Vec::new(),
         }
     }
