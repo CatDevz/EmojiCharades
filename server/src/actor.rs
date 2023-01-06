@@ -1,5 +1,6 @@
 use actix::{Actor, Context, Handler, Message};
-use rand::{distributions::Alphanumeric, Rng};
+use rand::distributions::Alphanumeric;
+use rand::Rng;
 use uuid::Uuid;
 
 enum PlayerRole {
