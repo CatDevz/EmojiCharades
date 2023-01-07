@@ -55,7 +55,7 @@ enum State {
     Playing(OngoingGame),
 }
 
-struct Game {
+pub struct Game {
     id: Uuid,
     state: State,
     room_code: String,
@@ -91,7 +91,7 @@ enum PlayerJoinResponse {
 }
 
 enum StartGameResponse {
-    Started,
+    Success,
     GameAlreadyStarted,
     Unauthorized,
 }
@@ -154,7 +154,7 @@ impl Handler<StartGame> for Game {
                         current_round: 0,
                     });
 
-                    Ok(StartGameResponse::Started)
+                    Ok(StartGameResponse::Success)
                 }
             };
         }

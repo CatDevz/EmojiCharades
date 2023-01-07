@@ -1,4 +1,4 @@
-#![allow(dead_code)]
+#![allow(dead_code, unused_imports)]
 #![warn(
     clippy::wildcard_imports,
     clippy::string_add,
@@ -8,6 +8,7 @@
 )]
 
 pub mod actor;
+pub mod websockets;
 
 fn main() {
     println!("Hello, world!");
