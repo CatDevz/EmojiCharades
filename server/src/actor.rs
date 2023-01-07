@@ -5,8 +5,8 @@ use rand::distributions::Alphanumeric;
 use rand::Rng;
 use uuid::Uuid;
 
-static DEFAULT_WORD_LIST: Lazy<Vec<String>> = Lazy::new(|| {
-    include_str!("assets/words.txt")
+static DEFAULT_PROMPT_LIST: Lazy<Vec<String>> = Lazy::new(|| {
+    include_str!("assets/prompts.txt")
         .split('\n')
         .map_into()
         .collect::<Vec<_>>()
@@ -36,7 +36,7 @@ struct GameSettings {
 impl Default for GameSettings {
     fn default() -> Self {
         Self {
-            prompt_list: DEFAULT_WORD_LIST.clone(),
+            prompt_list: DEFAULT_PROMPT_LIST.clone(),
             time_to_guess_in_seconds: 30,
             number_of_rounds: 10,
             allow_specators: true,
